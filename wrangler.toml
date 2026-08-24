@@ -1,0 +1,18 @@
+name = "anime-rp-bot"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+
+# دیتابیس D1 - بعد از ساختن دیتابیس با دستور زیر، database_id رو اینجا جایگزین کن:
+# npx wrangler d1 create anime-rp-bot-db
+[[d1_databases]]
+binding = "DB"
+database_name = "anime-rp-bot-db"
+database_id = "REPLACE_WITH_YOUR_DATABASE_ID"
+
+# Workers AI
+[ai]
+binding = "AI"
+
+# هر ۱ دقیقه یکبار برای چک کردن مهلت‌ها و تایمرها اجرا می‌شه
+[triggers]
+crons = ["* * * * *"]
